@@ -181,14 +181,14 @@ public class NoteBytesArray extends NoteBytes{
 
         int dstLength = dst.length;
 
-        if(m_length > dstLength){
+        if(dstLength > m_length){
             return false;
         }
         if(m_length == dstLength){
             return noteBytes.equals(this);
         }
         
-        return Arrays.equals(src, 0, m_length, dst, 0, dstLength);
+        return Arrays.equals(src, 0, dstLength, dst, 0, dstLength);
     }
     
     public int indexOf(NoteBytes noteBytes){
@@ -562,6 +562,7 @@ public class NoteBytesArray extends NoteBytes{
         m_length = bytes.length;
         byte[] internalBytes = getBytesInternal();
         System.arraycopy(bytes, 0, internalBytes, 0, m_length);
+        super.set(internalBytes, type);
     }
 
     @Override

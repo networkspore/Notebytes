@@ -221,7 +221,7 @@ public class NoteBytesMap{
         return noteBytes != null ? noteBytes.getAsLong() : defaultLong;
     }
 
-    public long getAsInt(NoteBytes key, int defaultInt){
+    public int getAsInt(NoteBytes key, int defaultInt){
         NoteBytes noteBytes = get(key);
         return noteBytes != null ? noteBytes.getAsInt() : defaultInt;
     }

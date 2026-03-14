@@ -570,7 +570,10 @@ public class NoteBytesArray extends NoteBytes{
         return m_length;
     }
 
-
+    @Override
+    public boolean isEmpty(){
+        return m_length == 0;
+    }
     
    
 }
